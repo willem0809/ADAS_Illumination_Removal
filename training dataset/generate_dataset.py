@@ -33,10 +33,6 @@ class DatasetGenerator:
             background = cv2.resize(cv2.imread(path), (512, 512))
             self.backgrounds.append(background)
 
-    def go(self):
-        print(self.gt_dir)
-        os.makedirs(self.gt_dir, exist_ok=True)
-
     def generate(self):
         for i in range(self.size):
             j = i % len(self.backgrounds)

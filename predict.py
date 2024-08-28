@@ -116,12 +116,9 @@ class Predict:
         print('complete')
 
 
-# good !
-# model_datas = ['model1_data/unet mask sigmoid123.pth', 'model2_data/unetnew1.pth']
-# model_datas = ['model_data/model1_data/unet mask sigmoid256 diff grids.pth',
-#                'model_data/model2_data/unet_different grids no bg new.pth']
 model_datas = ['model_data/model1_data/model1 good1.pth',
                'model_data/model2_data/model2 good.pth']
+
 p = Predict(model_data=model_datas)
 p.start()
 

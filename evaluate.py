@@ -47,14 +47,10 @@ def evaluate_images(processed_dir, groundtruth_dir):
 
 
 # 示例使用
-# processed_dir = 'predict/results'
-# groundtruth_dir = 'training dataset/dataset/ground truth'
+processed_dir = 'predict/results'
+groundtruth_dir = 'training dataset/dataset/ground truth'
 
 # processed_dir = 'predict/masks'
 # groundtruth_dir = 'training dataset/dataset/mask'
-
-processed_dir = 'p1'
-groundtruth_dir = 'training dataset/dataset/ground truth'
-
 
 evaluate_images(processed_dir, groundtruth_dir)
