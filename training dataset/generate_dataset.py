@@ -8,67 +8,6 @@ from imgs_generate_methods import generate_imgs
 from transform import transform_imgs
 
 
-# gt_dir = 'dataset/ground truth'
-# img_dir = 'dataset/chessboard_images'
-# mask_dir = 'dataset/mask'
-# gt_nobg_dir = 'dataset/ground truth without bg'
-# img_nobg_dir = 'dataset/chessboard_images without bg'
-#
-# backgrounds_paths = glob.glob(os.path.join('backgrounds', '*.jpg'))
-# backgrounds = []
-#
-# starttime = time.time()
-#
-# for path in backgrounds_paths:
-#     background = cv2.resize(cv2.imread(path), (512, 512))
-#     backgrounds.append(background)
-# # print(len(backgrounds))
-#
-# for i in range(1000):
-#     j = i % len(backgrounds)
-#     ground_truth, result_image, mask, ground_truth_without_bg, highlight_image_without_bg = generate_imgs(
-#         backgrounds[j], 0.8)
-#
-#     image_name = 'image' + str(i) + '.png'
-#
-#     filename = os.path.join(gt_dir, image_name)
-#     cv2.imwrite(filename, ground_truth)
-#     print(f"Saved: {filename}")
-#
-#     filename = os.path.join(img_dir, image_name)
-#     cv2.imwrite(filename, result_image)
-#     print(f"Saved: {filename}")
-#
-#     filename = os.path.join(mask_dir, image_name)
-#     cv2.imwrite(filename, mask)
-#     print(f"Saved: {filename}")
-#
-#     filename = os.path.join(gt_nobg_dir, image_name)
-#     cv2.imwrite(filename, ground_truth_without_bg)
-#     print(f"Saved: {filename}")
-#
-#     filename = os.path.join(img_nobg_dir, image_name)
-#     cv2.imwrite(filename, highlight_image_without_bg)
-#     print(f"Saved: {filename}")
-#
-# transform_imgs(mask_dir='dataset/mask',
-#                image_dir='dataset/chessboard_images',
-#                img_with_corners_dir='dataset/corners',
-#                output_dir='dataset/masked',
-#                corners_csv_path='dataset/corners.csv',
-#                offset=0)
-#
-# transform_imgs(mask_dir='dataset/mask',
-#                image_dir='dataset/ground truth',
-#                img_with_corners_dir='dataset/corners gt',
-#                output_dir='dataset/masked gt',
-#                corners_csv_path='dataset/corners.csv',
-#                offset=0)
-#
-# endtime = time.time()
-# print(f'Total run time: {endtime - starttime}')
-
-
 class DatasetGenerator:
     def __init__(self, directory, background_dir, dataset_size):
         self.size = dataset_size
@@ -141,5 +80,5 @@ class DatasetGenerator:
                        offset=0)
 
 
-g = DatasetGenerator('t', 'backgrounds', 20)
+g = DatasetGenerator('dataset', 'backgrounds', 100)
 g.generate()
